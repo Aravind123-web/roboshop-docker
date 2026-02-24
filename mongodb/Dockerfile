@@ -1,0 +1,2 @@
+FROM mongo:5 # This is official MongoDB image pull from Docker Hub. We are using version 5 of MongoDB.
+COPY *.js /docker-entrypoint-initdb.d/ # This will copy all the .js files from the current directory to the /docker-entrypoint-initdb.d/ directory in the container. The MongoDB image will automatically execute any .js files in this directory when the container is started for the first time. This is useful for initializing the database with some data or creating indexes.
