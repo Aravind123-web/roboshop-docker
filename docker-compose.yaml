@@ -23,4 +23,16 @@ services:
    # networks:
     #  - roboshop
     depends_on:
-      - catalogue
+      - catalogue     
+  redis:
+    imgae: redis
+  user:
+    image: user:v4
+    depends_on:
+    - redis
+    - mongodb
+  cart:
+    image: cart:v5
+    depends_on:
+    - redis
+    - catalogue
