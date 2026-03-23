@@ -27,12 +27,12 @@ services:
   redis:
     image: redis
   user:
-    image: user:v4
+    image: user:v5
     depends_on:
     - redis
     - mongodb
   cart:
-    image: cart:v5
+    image: cart:v4
     depends_on:
     - redis
     - catalogue
